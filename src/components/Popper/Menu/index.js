@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -23,6 +23,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                 <MenuItem
                     key={index}
                     data={item}
+                    hideOnClick={hideOnClick}
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
@@ -52,7 +53,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
