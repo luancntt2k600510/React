@@ -151,7 +151,6 @@ function Header() {
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/aee057941301af2efecea5e2f7906c34~c5_300x300.webp?x-expires=1681228800&x-signature=C87GXOyHTC1dWGXZIJwLD2nymX4%3D"
                                 className={cx("user-avatar")}
                                 alt="Nguyen Van A"
-                                // fallback="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                             />
                         ) : (
                             <button className={cx("more-btn")}>
